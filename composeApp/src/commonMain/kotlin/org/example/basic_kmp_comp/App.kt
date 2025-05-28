@@ -25,7 +25,9 @@ import basiccomposecomponents.composeapp.generated.resources.compose_multiplatfo
 fun App() {
     MaterialTheme {
         Box(Modifier.statusBarsPadding()){
-
+            Button(onClick = {}){
+                Text("Click me!")
+            }
         }
     }
 }

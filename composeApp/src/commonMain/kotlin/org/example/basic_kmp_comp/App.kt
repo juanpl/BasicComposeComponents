@@ -15,10 +15,15 @@ import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
+
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
+
+        var user by  remember { mutableStateOf("") }
+        var pass by  remember { mutableStateOf("") }
+
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -26,17 +31,25 @@ fun App() {
 
         ) {
             OutlinedTextField(
-                value = "",
-                onValueChange = {}
+                value = user,
+                onValueChange = {user = it}
             )
             OutlinedTextField(
-                value = "",
-                onValueChange = {}
+                value = pass,
+                onValueChange = {pass = it}
             )
-            Button(onClick = {}){
+            Button(
+                onClick = {
+                    user = ""
+                    pass = ""
+                },
+                enabled = user.isNotEmpty() && pass.isNotEmpty()
+            ){
                 Text("Login")
             }
         }
     }
 }
+
+
 

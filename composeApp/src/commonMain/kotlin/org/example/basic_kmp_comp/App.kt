@@ -36,12 +36,11 @@ fun App() {
                 .statusBarsPadding()
                 .background(Color.Yellow)
                 .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceAround
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ){
-            MyButton("Click me")
-            MyButton("Click me too")
-            MyButton("Click me again!!")
+            MyButton("Click me", modifier = Modifier.weight(1f))
+            MyButton("Click me too", modifier = Modifier.weight(1f))
+            MyButton("Click me again!!", modifier = Modifier.weight(1f))
         }
     }
 }
